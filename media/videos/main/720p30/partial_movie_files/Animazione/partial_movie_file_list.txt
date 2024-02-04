@@ -1,0 +1,8 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/nickolausen/Documents/GitHub/Notte-Pitagorica/media/videos/main/720p30/partial_movie_files/Animazione/3694189621_1342489667_2358810818.mp4'
+file 'file:/Users/nickolausen/Documents/GitHub/Notte-Pitagorica/media/videos/main/720p30/partial_movie_files/Animazione/790497450_1704852926_3733723742.mp4'
+file 'file:/Users/nickolausen/Documents/GitHub/Notte-Pitagorica/media/videos/main/720p30/partial_movie_files/Animazione/790497450_2643485327_4245223840.mp4'
+file 'file:/Users/nickolausen/Documents/GitHub/Notte-Pitagorica/media/videos/main/720p30/partial_movie_files/Animazione/790497450_255102487_1084023272.mp4'
+file 'file:/Users/nickolausen/Documents/GitHub/Notte-Pitagorica/media/videos/main/720p30/partial_movie_files/Animazione/790497450_1972182262_3478540198.mp4'
+file 'file:/Users/nickolausen/Documents/GitHub/Notte-Pitagorica/media/videos/main/720p30/partial_movie_files/Animazione/790497450_2673327150_2353588030.mp4'
+file 'file:/Users/nickolausen/Documents/GitHub/Notte-Pitagorica/media/videos/main/720p30/partial_movie_files/Animazione/790497450_1704852926_3059557133.mp4'
