@@ -22,7 +22,6 @@ class Versione1(Scene):
         count = end_index + 1
 
         # Creazione oggetti - Serie di Fibonacci e Golden Ratio
-
         squares = VGroup(Square(1 * 0.3))
         next_dir = [RIGHT, UP, LEFT, DOWN]
         FSeq = [1, 2, 3, 5, 8, 13, 21]
@@ -54,7 +53,9 @@ class Versione1(Scene):
 
         # Animazioni
         self.play(
-            AnimationGroup(*[Create(square) for square in squares], Create(spiral), lag_ratio=.90)
+            AnimationGroup(*[Create(square) for square in squares], 
+            Create(spiral), 
+            lag_ratio=.90)
         )
         self.wait()
 
