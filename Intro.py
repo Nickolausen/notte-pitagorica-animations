@@ -1,7 +1,7 @@
+from General import BACKGROUND_CLR
+
 from manim import *
 from random import randint
-
-BACKGROUND_CLR = "#010a14"
 
 class Versione1(Scene):
     def construct(self):
@@ -11,8 +11,8 @@ class Versione1(Scene):
         self.camera.background_color = BACKGROUND_CLR
         
         # Creazione titolo
-        first_word = Tex(r"$\mathbb{N}$\textsc{otte}").scale(3)
-        second_word = Tex(r"$\mathbb{P}$\textsc{itagorica}").scale(3)
+        first_word = Tex(r"$\mathbb{O}$\textsc{rizzonti}").scale(3)
+        second_word = Tex(r"$\mathbb{P}$\textsc{itagorici}").scale(3)
         second_word.next_to(first_word, DOWN, buff=.2)
         sentence = VGroup(first_word, second_word)
         sentence.move_to(ORIGIN)

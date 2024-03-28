@@ -1,0 +1,8 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/nicho/Documents/GitHub/Notte-Pitagorica-Animations/media/videos/Intro/720p30/partial_movie_files/Versione1/3694189621_2744546044_2358810818.mp4'
+file 'file:C:/Users/nicho/Documents/GitHub/Notte-Pitagorica-Animations/media/videos/Intro/720p30/partial_movie_files/Versione1/790497450_1704852926_3990479581.mp4'
+file 'file:C:/Users/nicho/Documents/GitHub/Notte-Pitagorica-Animations/media/videos/Intro/720p30/partial_movie_files/Versione1/790497450_353444984_2877602613.mp4'
+file 'file:C:/Users/nicho/Documents/GitHub/Notte-Pitagorica-Animations/media/videos/Intro/720p30/partial_movie_files/Versione1/790497450_255102487_2580544743.mp4'
+file 'file:C:/Users/nicho/Documents/GitHub/Notte-Pitagorica-Animations/media/videos/Intro/720p30/partial_movie_files/Versione1/790497450_3543641531_75597404.mp4'
+file 'file:C:/Users/nicho/Documents/GitHub/Notte-Pitagorica-Animations/media/videos/Intro/720p30/partial_movie_files/Versione1/790497450_4171723092_618389954.mp4'
+file 'file:C:/Users/nicho/Documents/GitHub/Notte-Pitagorica-Animations/media/videos/Intro/720p30/partial_movie_files/Versione1/790497450_1704852926_3059557133.mp4'
