@@ -1,5 +1,5 @@
 from manim import *
-from General import BACKGROUND_CLR
+from PARINI.General import BACKGROUND_CLR
 
 class Versione1(Scene):
     def construct(self):

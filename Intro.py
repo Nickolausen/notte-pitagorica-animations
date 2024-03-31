@@ -1,4 +1,4 @@
-from General import BACKGROUND_CLR
+from PARINI.General import BACKGROUND_CLR
 
 from manim import *
 from random import randint
