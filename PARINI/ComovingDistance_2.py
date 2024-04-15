@@ -11,6 +11,7 @@ class ComovingDistance2(Scene):
 
         hubbles_sphere = VGroup(hubbles_sphere_1, hubbles_sphere_2)
         hubbles_sphere.rotate(angle=PI/2, about_point=classic_plane.get_origin()).rotate(angle=PI).set_color(TEAL)
+        
         hubbles_sphere_label = classic_plane.get_graph_label(graph=hubbles_sphere_1, label="Hubble\ Sphere", color=TEAL)
         hubbles_sphere_label.scale(CST_SCALE_FACTOR).move_to(classic_plane.get_origin()).shift(UP * 2 + RIGHT * .35).rotate(PI/2.5)
 

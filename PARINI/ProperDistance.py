@@ -24,7 +24,9 @@ class ProperDistance(Scene):
         now_label.scale(CST_SCALE_FACTOR)
         
         particle_horizon = classic_plane.plot(lambda x: abs(.5 * x), color=PINK)
-        
+        particle_horizon_label = classic_plane.get_graph_label(particle_horizon, "particle\ horizon")
+        particle_horizon_label.scale(CST_SCALE_FACTOR).move_to(classic_plane.get_origin()).shift(UP * 2.25 + RIGHT * 4).rotate(PI/2 - np.arctan(5/2.5))
+
         event_horizon = classic_plane.plot(lambda x: .5 * (x**2), x_range=[-3.162,3.162], color=BLUE)
         event_horizon_label = classic_plane.get_graph_label(event_horizon, "event\ horizon")
         event_horizon_label.scale(CST_SCALE_FACTOR).move_to(classic_plane.get_origin()).shift(UP * 4 + LEFT * 3.1).rotate(PI/2 + PI/10)
@@ -47,10 +49,13 @@ class ProperDistance(Scene):
 
         graph_title = Tex("Proper Distance").scale(2).move_to(classic_plane.get_center() + (3.25 * DOWN))
 
+        # graph_elements = VGroup(now, )
+
         self.play(
             AnimationGroup(
                 Create(classic_plane), 
                 Create(now),
+                Write(now_label),
                 Create(event_horizon),
                 Write(event_horizon_label),
                 Create(hubble_sphere),
@@ -58,6 +63,7 @@ class ProperDistance(Scene):
                 FadeIn(total_area),
                 FadeIn(second_area),
                 Create(DashedVMobject(particle_horizon)),
+                Write(particle_horizon_label),
                 Create(light_cone),
                 Write(light_cone_label),
                 Write(graph_title), 
