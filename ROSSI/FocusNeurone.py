@@ -66,3 +66,14 @@ class Neurone(Scene):
             self.wait(.3)
 
         self.play(Create(output_link), Write(output_text))
+        
+        output_formula = MathTex("output = f(neurone)", substrings_to_isolate=["output", "neurone"])
+        output_formula.move_to(neuron_formula)
+        output_formula.set_color_by_tex("output", TEAL)
+        output_formula.set_color_by_tex("neurone", GREEN)
+
+        self.wait(5)
+        self.play(FadeOut(neuron_formula))
+        self.wait()
+        self.play(Write(output_formula))
+        self.wait(5)
