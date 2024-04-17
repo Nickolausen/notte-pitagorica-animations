@@ -1,8 +1,7 @@
 from manim import *
 from General import BACKGROUND_CLR
 
-class Versione1(Scene):
- 
+class Versione1(Scene): 
     def construct(self):
         distance = 3
         self.camera.background_color = BACKGROUND_CLR
