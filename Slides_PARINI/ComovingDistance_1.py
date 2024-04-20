@@ -5,6 +5,18 @@ class ComovingDistance1(Scene):
     def construct(self):
         self.camera.background_color = BACKGROUND_CLR
 
+        classic_plane = NumberPlane(
+            x_range=[-5, 5, 1], 
+            y_range=[0, 5, 1], 
+            axis_config={
+                "include_numbers": False,
+            },
+            background_line_style={
+                "stroke_opacity": .5,
+                "stroke_width": .5
+            }
+        )
+
         def event_horizon_f(x):
             return .7629 / (.1 * x ** 2)
         

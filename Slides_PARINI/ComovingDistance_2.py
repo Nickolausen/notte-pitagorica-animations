@@ -5,6 +5,18 @@ class ComovingDistance2(Scene):
     def construct(self):
         self.camera.background_color = BACKGROUND_CLR
 
+        classic_plane = NumberPlane(
+            x_range=[-5, 5, 1], 
+            y_range=[0, 5, 1], 
+            axis_config={
+                "include_numbers": False,
+            },
+            background_line_style={
+                "stroke_opacity": .5,
+                "stroke_width": .5
+            }
+        )
+
         f_domain = [0, 4]
         hubbles_sphere_1 = classic_plane.plot(lambda x: 1.5 * (((3 * np.log( (np.exp(x) - .1) / ( np.exp(2 * x) + 1 ))) / (x + 1)) + 2.4), x_range=f_domain)
         hubbles_sphere_2 = classic_plane.plot(lambda x: -1.5 * (((3 * np.log( (np.exp(x) - .1) / ( np.exp(2 * x) + 1 ))) / (x + 1)) + 2.4), x_range=f_domain)

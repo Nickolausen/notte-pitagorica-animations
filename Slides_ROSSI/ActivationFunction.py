@@ -1,5 +1,5 @@
 from manim import *
-from General import *
+from _General import *
 from math import *
 
 class ActivationFunction(Scene):

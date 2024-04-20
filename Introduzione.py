@@ -1,12 +1,11 @@
-from PARINI.General import BACKGROUND_CLR
+from General import BACKGROUND_CLR
 
 from manim import *
-from random import randint
 
 class Versione1(Scene):
     def construct(self):
-        screen_width = int((14 + 2/9) / 2) 
-        screen_height = int(8/2)
+        # screen_width = int((14 + 2/9) / 2) 
+        # screen_height = int(8/2)
         
         self.camera.background_color = BACKGROUND_CLR
         

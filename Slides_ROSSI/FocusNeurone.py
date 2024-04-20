@@ -1,5 +1,5 @@
 from manim import *
-from General import BACKGROUND_CLR
+from _General import BACKGROUND_CLR
 from StrutturaGen import *
 
 class Neurone(Scene):
