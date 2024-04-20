@@ -1,5 +1,3 @@
-from _General import BACKGROUND_CLR
-
 from manim import *
 
 class Versione1(Scene):
@@ -7,18 +5,12 @@ class Versione1(Scene):
         # screen_width = int((14 + 2/9) / 2) 
         # screen_height = int(8/2)
         
-        self.camera.background_color = BACKGROUND_CLR
-        
         # Creazione titolo
         first_word = Tex(r"$\mathbb{O}$\textsc{rizzonti}").scale(3)
         second_word = Tex(r"$\mathbb{P}$\textsc{itagorici}").scale(3)
         second_word.next_to(first_word, DOWN, buff=.2)
         sentence = VGroup(first_word, second_word)
         sentence.move_to(ORIGIN)
-
-        start_index = 0
-        end_index = 30
-        count = end_index + 1
 
         # Creazione oggetti - Serie di Fibonacci e Golden Ratio
         squares = VGroup(Square(1 * 0.3))

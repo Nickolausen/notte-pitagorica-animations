@@ -1,11 +1,8 @@
 from manim import *
-from _General import BACKGROUND_CLR
-from StrutturaGen import *
 
 class Neurone(Scene):
     def construct(self):
         arrow_length = 4
-        self.camera.background_color = BACKGROUND_CLR
 
         neuron_circle = Circle(color=GREEN)
 
@@ -73,7 +70,8 @@ class Neurone(Scene):
         output_formula.set_color_by_tex("neurone", GREEN)
 
         self.wait(5)
-        self.play(FadeOut(neuron_formula))
+        self.play(AnimationGroup(*[obj.animate.shift(UP) for obj in self.mobjects]))
         self.wait()
         self.play(Write(output_formula))
-        self.wait(5)
+        self.wait(7)
+        self.play(FadeOut(*self.mobjects))

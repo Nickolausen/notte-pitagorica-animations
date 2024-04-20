@@ -1,10 +1,8 @@
 from manim import *
-from _General import BACKGROUND_CLR
 
 class Versione1(Scene): 
     def construct(self):
         distance = 3
-        self.camera.background_color = BACKGROUND_CLR
 
         # Input layer
         input_layer_heading = Tex("Input layer")
