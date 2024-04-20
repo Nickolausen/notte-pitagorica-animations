@@ -1,4 +1,4 @@
-from General import BACKGROUND_CLR
+from _General import BACKGROUND_CLR
 
 from manim import *
 

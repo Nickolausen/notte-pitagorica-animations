@@ -1,5 +1,5 @@
 from manim import *
-from General import *
+from _General import *
 
 class ProperDistance(Scene):
     def construct(self):
