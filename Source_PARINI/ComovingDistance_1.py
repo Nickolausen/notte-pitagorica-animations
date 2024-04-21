@@ -3,7 +3,6 @@ from _General import *
 
 class ComovingDistance1(Scene):
     def construct(self):
-        self.camera.background_color = BACKGROUND_CLR
 
         classic_plane = NumberPlane(
             x_range=[-5, 5, 1], 
@@ -77,3 +76,6 @@ class ComovingDistance1(Scene):
                 lag_ratio=1
             )
         )
+
+        self.wait(5)
+        self.play(FadeOut(*self.mobjects))

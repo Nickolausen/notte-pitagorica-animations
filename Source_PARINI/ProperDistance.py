@@ -3,7 +3,6 @@ from _General import *
 
 class ProperDistance(Scene):
     def construct(self):
-        self.camera.background_color = BACKGROUND_CLR
 
         def light_cone_f(x):
             return 1.5 * (((3 * np.log( np.exp(x) / ( np.exp(2 * x) + 1 ))) / (x + 1)) + 2.079)
@@ -81,5 +80,5 @@ class ProperDistance(Scene):
                 Write(graph_title), 
                 lag_ratio=1))
         
-        self.wait(4)
+        self.wait(5)
         self.play(FadeOut(*self.mobjects))
