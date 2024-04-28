@@ -1,23 +1,44 @@
 from manim import *
-# TO DO: Logarithmic Scale
 
 class Funzioni(Scene):
     def construct(self):
-        func_1 = lambda x: (1 + x)*(1 - .1 * np.log(.1 * x))
-        func_2 = lambda x: (1 + x)*(1 - .11 * np.log(1 + .1 * x))
-        func_3 = lambda x: (1 + x)*(1 - .119 * np.log(1 + .1 * x))
+        func_1 = lambda x: (1 + x) * (1 - np.log(1 + .5 * x))
+        func_2 = lambda x: (1 + x) * (1 - np.log(1 + .2 * x))
+        func_3 = lambda x: (1 + x) * (1 - .6 * np.log(1 + .2 * x))
 
         ax = Axes(
-            x_axis_config={
-                "scaling": LogBase()
-            },
-            y_axis_config={
-                "scaling": LogBase()
+            x_range=[-1, 25, 2],
+            y_range=[-1, 4],
+            axis_config={
+                "tip_shape": StealthTip
             }
         )
 
-        f1 = ParametricFunction(func_1, t_range=[.1]).set_color(RED)
-        f2 = ParametricFunction(func_2, discontinuities=[-10]).set_color(GREEN)
-        f3 = ParametricFunction(func_3, discontinuities=[-10]).set_color(BLUE)
+        axes_label = ax.get_axis_labels(
+            Tex("$anni$").scale(0.7), Tex("$d_{OF}(m)$").scale(0.7)
+        )
+        axes_label[0].shift(DOWN * .7)
 
-        self.add(ax, f1, f2, f3)
+        f1 = ax.plot(func_1, x_range=[-1, 4.5]).set_color(RED)
+        intersection1_dot = Dot(point = ax.c2p(3.4, 0)).set_color(RED)
+        intersection1_label = Tex(r"$8,5 \times 10^{36}$").next_to(intersection1_dot, UR, .1).scale(.5).shift(LEFT * .6).set_color(RED)
+
+        f2 = ax.plot(func_2, x_range=[-1, 9.9]).set_color(GREEN)
+        intersection2_dot = Dot(point = ax.c2p(8.6, 0)).set_color(GREEN)
+        intersection2_label = Tex(r"$6 \times 10^{427}$").next_to(intersection2_dot, UR, .1).scale(.5).shift(LEFT * .6).set_color(GREEN)
+
+        f3 = ax.plot(func_3, x_range=[-1, 23.3]).set_color(BLUE)
+        intersection3_dot = Dot(point = ax.c2p(21.5, 0)).set_color(BLUE)
+        intersection3_label = Tex(r"$3 \times 10^{434284}$").next_to(intersection3_dot, UR, .1).scale(.5).shift(LEFT * .8).set_color(BLUE)
+
+        labels = VGroup(intersection1_label, intersection2_label, intersection3_label)
+        functions = VGroup(f1, f2, f3)
+        dots = VGroup(intersection1_dot, intersection2_dot, intersection3_dot)
+
+        self.play(AnimationGroup(Create(ax), Write(axes_label), lag_ratio=.8), run_time=3)
+        for idx, el in enumerate(functions):
+            self.play(Create(functions[idx], rate_func=rate_functions.ease_in_expo, run_time=3))
+            self.play(AnimationGroup(GrowFromCenter(dots[idx]), Write(labels[idx])), lag_ratio=.8)
+
+        self.wait(9)
+        self.play(FadeOut(*self.mobjects))
