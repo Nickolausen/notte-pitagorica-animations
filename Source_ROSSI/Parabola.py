@@ -15,11 +15,11 @@ class Parabola(Scene):
         ax.get_x_axis().numbers[3].set_color(YELLOW)
 
         parabola = ax.plot(lambda x: net_function(x), x_range=[1.25, 6.75])
-        parabola.set_color(RED)
+        parabola.set_color(GREEN)
         
 
         parabola_label_text = MathTex("f(x) = (x - 4)^2", substrings_to_isolate=["4"])
-        parabola_label = ax.get_graph_label(parabola, parabola_label_text)
+        parabola_label = ax.get_graph_label(parabola, parabola_label_text).set_color(GREEN)
         parabola_label_text.set_color_by_tex("4", YELLOW)
         parabola_label.shift(DOWN * 5)
 

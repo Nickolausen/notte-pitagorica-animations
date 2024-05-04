@@ -3,8 +3,8 @@ from random import randint, random
 
 class Intro(Scene):
     def construct(self):
-        pres_title = Tex(r"\textsc{Emotional Waves}").scale_to_fit_width(self.camera.frame_width - 3)
-        subtitle = Tex(r"\textbf{Giuseppe Cuna} \textit{- a.k.a 'azelbeatbox', \\ Human Beatboxer, ex studente @ I.T.T. 'Blaise Pascal'}")
+        pres_title = Tex(r"\textsc{Il maleficio di Zwiebach \\e gli orizzonti cosmologici}").scale_to_fit_width(self.camera.frame_width - 3)
+        subtitle = Tex(r"\textbf{Emanuele Parini} \textit{- professore di Matematica\\ @ I.T.T 'Blaise Pascal'}")
         subtitle.next_to(pres_title, DOWN).scale(.7)
 
         texts = VGroup(pres_title, subtitle).move_to(ORIGIN)

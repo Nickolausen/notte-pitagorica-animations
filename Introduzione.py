@@ -6,8 +6,8 @@ class Versione1(Scene):
         # screen_height = int(8/2)
         
         # Creazione titolo
-        first_word = Tex(r"$\mathbb{O}$\textsc{rizzonti}").scale(3)
-        second_word = Tex(r"$\mathbb{P}$\textsc{itagorici}").scale(3)
+        first_word = Tex(r"$\mathbb{N}$\textsc{otte}").scale(3)
+        second_word = Tex(r"$\mathbb{P}$\textsc{itagorica}").scale(3)
         second_word.next_to(first_word, DOWN, buff=.2)
         sentence = VGroup(first_word, second_word)
         sentence.move_to(ORIGIN)
@@ -41,6 +41,8 @@ class Versione1(Scene):
             if direction[j % 4] != 1:
                 arc = arc.reverse_direction()
             spiral.add(arc)
+
+        spiral.set_color(TEAL)
 
         # Animazioni
         self.play(

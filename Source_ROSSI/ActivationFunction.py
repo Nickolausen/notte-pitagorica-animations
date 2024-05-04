@@ -17,7 +17,7 @@ class ActivationFunction(Scene):
         )
 
         sigmoid_graph = ax.plot(lambda x: sigmoid(x))
-        sigmoid_graph.set_color(RED)
+        sigmoid_graph.set_color(TEAL)
         
         dot = always_redraw(lambda: Dot(point = ax.c2p(point_tracker.get_value(), sigmoid(point_tracker.get_value()))))
         
@@ -25,7 +25,7 @@ class ActivationFunction(Scene):
         x_projection = always_redraw(lambda: ax.get_horizontal_line(point=ax.c2p(point_tracker.get_value(), sigmoid(point_tracker.get_value())), line_func=DashedLine))
 
         sigmoid_header = Tex(r"\textsc{Sigmoid}")
-        sigmoid_header.shift(UP * 3).set_color(RED)
+        sigmoid_header.shift(UP * 3).set_color(TEAL)
 
         def draw_label():
             point = ax.p2c(point=[point_tracker.get_value(), sigmoid(point_tracker.get_value()), 0])
@@ -46,8 +46,7 @@ class ActivationFunction(Scene):
                              tex_template = my_tex_template)
         
         text_label.set_color_by_tex("neurone", GREEN)
-        text_label.set_color_by_tex("f", RED)
-        text_label.set_color_by_tex("output", BLUE)
+        text_label.set_color_by_tex("f", TEAL)
         text_label.shift(LEFT * 4.5 + UP).scale(.7)
 
         self.play(Write(label), 
