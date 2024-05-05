@@ -56,5 +56,3 @@ class Tetraktys(Scene):
         self.play(everything.animate.shift(UP * .4))
         self.wait(2)
         self.play(FadeIn(title))
-        self.wait(9)
-        self.play(FadeOut(*self.mobjects))

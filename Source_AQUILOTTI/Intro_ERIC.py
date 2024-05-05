@@ -1,5 +1,6 @@
 from manim import *
 from random import randint, random
+import cv2
 
 class Intro(Scene):
     def construct(self):
@@ -8,28 +9,23 @@ class Intro(Scene):
         subtitle.next_to(pres_title, DOWN).scale(.7)
 
         texts = VGroup(pres_title, subtitle).move_to(ORIGIN)
+        cap = cv2.VideoCapture("api_background.mp4")
+        flag = True
+        frame_imgs = []
 
-        circles = VGroup()
-        for i in range(0, 9):
-            new_circ = Circle(radius=randint(3, 7), color=random_color())
-            new_circ.set_x(randint(-int((14 + 2/9) / 2), int((14 + 2/9) / 2)))
-            new_circ.set_y(randint(-int(8/2), int(8/2)))
-            new_circ.set_opacity(random() % .41).set_stroke(width=0)
-            new_circ.scale(random() % 1.1)
-            circles.add(new_circ)
+        while flag:
+            flag, frame = cap.read()
+            if flag:
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                frame_img = ImageMobject(frame)
+                frame_img.fade(.4).set_z_index(-1)
+                frame_imgs.append(frame_img)
+        cap.release()
 
-        circles.set_z_index(-1)
-
-        self.play(FadeIn(pres_title), run_time=5)
-        self.play(AddTextLetterByLetter(subtitle))
-
-        for circle in circles:
-            self.play(FadeIn(circle), run_time=randint(3, 5))
-        
-        directions = [UP, DOWN, LEFT, RIGHT]
-        for circle in circles:
-            self.play(circle.animate.shift(directions[randint(0, 3)] * randint(1, 3) + directions[randint(0, 3)] * randint(0, 2)), run_time=randint(5, 7))
-
-        self.wait(4)
-        self.play(FadeOut(*self.mobjects))
-        
+        for i in [0, 1, 3, 4, 5, 6, 7, 8]:
+            for frame_img in frame_imgs:
+                self.add(frame_img)
+                self.wait(0.04)
+                self.remove(frame_img)
+                if texts not in self.mobjects:
+                    self.add(texts)
