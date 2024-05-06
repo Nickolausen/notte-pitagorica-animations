@@ -1,8 +1,6 @@
 from manim import *
 from random import randint
 
-WAITING_INTERVAL = .1
-
 class Tetraktys_Sound(Scene):
     def construct(self):
         colors = [MAROON, GREEN, TEAL, ORANGE]
@@ -26,7 +24,7 @@ class Tetraktys_Sound(Scene):
         triangle = Polygon(
             circles.get_top(), 
             circles.get_right() + DOWN * 2, 
-            circles.get_left() + DOWN * 2).scale(1.35).shift(UP * .35).set_color(MAROON).set_stroke(opacity=.6, width=1.5)
+            circles.get_left() + DOWN * 2).scale(1.5).shift(UP * .35).set_color(MAROON).set_stroke(opacity=.6, width=1.5)
         
         tetraktys = VGroup(circles, triangle).scale(1.1).shift(DOWN * .2)
         
@@ -39,100 +37,80 @@ class Tetraktys_Sound(Scene):
 
         flash_triangle()
         
-        for i in range(0, 8):
-            self.play(FadeIn(circles[0][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeOut(circles[0][0]),  run_time=.1)
-            self.wait(WAITING_INTERVAL)
+        for i in range(0, 5):
+            outer_rnd_index = randint(0, 3)
+            inner_rnd_index = randint(0, len([*circles[outer_rnd_index]]) - 1)
+            
+            # if (outer_rnd_index in outer_idxs and inner_rnd_index in inner_idxs):
+            #     self.play(FadeOut(circles[outer_rnd_index][inner_rnd_index]), run_time=.1)
+            #     outer_idxs.remove(outer_rnd_index)
+            #     inner_idxs.remove(inner_rnd_index)
+            # else:
+            #     self.play(Create(circles[outer_rnd_index][inner_rnd_index]), run_time=.1)
+            #     outer_idxs.append(outer_rnd_index)
+            #     inner_idxs.append(inner_rnd_index)
 
-        div1 = 2
-        for i in range(0, 8):
-            self.play(FadeIn(circles[0][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL / div1)
-            self.play(FadeIn(circles[1][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL / div1)
-            self.play(FadeOut(circles[0][0]),  run_time=.1)
-            self.wait(WAITING_INTERVAL / div1)
-            self.play(FadeOut(circles[1][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL / div1)
+            self.play(FadeIn(circles[outer_rnd_index][inner_rnd_index]), run_time=.1)
+            self.wait(.4)
+            self.play(FadeOut(circles[outer_rnd_index][inner_rnd_index]), run_time=.1)
+            self.wait(.4)
 
-        div2 = 1.8
-        for i in range(0, 8):
-            self.play(FadeIn(circles[0][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL / div2)
-            self.play(FadeIn(circles[1][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL / div2)
-            self.play(FadeIn(circles[1][1]), run_time=.1)
-            self.wait(WAITING_INTERVAL / div2)
-            self.play(FadeOut(circles[0][0]),  run_time=.1)
-            self.wait(WAITING_INTERVAL / div2)
-            self.play(FadeOut(circles[1][0]),  run_time=.1)
-            self.wait(WAITING_INTERVAL / div2)
-            self.play(FadeOut(circles[1][1]),  run_time=.1)
-            self.wait(WAITING_INTERVAL / div2)
-
-        div3 = 9
-        for i in range(0, 8):
-            self.play(FadeIn(circles[0][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL * div3)
-            self.play(FadeIn(circles[1][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL * div3)
-            self.play(FadeIn(circles[1][1]), run_time=.1)
-            self.wait(WAITING_INTERVAL * div3)
-            self.play(FadeIn(circles[2][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL * div3)
-            self.play(FadeOut(circles[0][0]),  run_time=.1)
-            self.wait(WAITING_INTERVAL * div3)
-            self.play(FadeOut(circles[1][0]),  run_time=.1)
-            self.wait(WAITING_INTERVAL * div3)
-            self.play(FadeOut(circles[1][1]),  run_time=.1)
-            self.wait(WAITING_INTERVAL * div3)
-            self.play(FadeOut(circles[2][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL * div3)
-
-        for i in range(0, 8):
-            self.play(FadeIn(circles[0][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeIn(circles[1][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeIn(circles[1][1]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeIn(circles[2][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeIn(circles[2][1]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeOut(circles[0][0]),  run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeOut(circles[1][0]),  run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeOut(circles[1][1]),  run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeOut(circles[2][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeOut(circles[2][1]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
-
-        for i in range(0, 8):
-            self.play(FadeIn(circles[0][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeIn(circles[1][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeIn(circles[1][1]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeIn(circles[2][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            self.play(FadeIn(circles[2][1]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
-            # self.play(
-            #     circles[0][0].animate
-            # )
+        self.wait(.4)
+        for i in range(0, len([*circles])):
+            for j in range(0, len([*circles[i]])):
+                self.play(FadeIn(circles[i][j]), run_time=.3)
 
         flash_triangle()
-        self.wait(1)
-        for i in [0, 1, 2, 3]:
-            for j in range(0, len([*circles[i]])):
-                self.play(FadeIn(circles[i][j]))
+
+        self.play(FadeOut(circles[3]), run_time=.3)
+        for i in range(0, 20):
+            self.play(FadeIn(circles[3][i % 4]), run_time=.15)
+            self.wait(.3)
+            self.play(FadeOut(circles[3][i % 4]), run_time=.15)
+
+        flash_triangle()
+
+        self.play(FadeOut(circles[2]), run_time=.3)
+        for i in range(0, 11):
+            self.play(FadeIn(circles[2][i % 3]), run_time=.15)
+            self.wait(.3)
+            self.play(FadeOut(circles[2][i % 3]), run_time=.15)
+
+        flash_triangle()
+
+        self.play(FadeOut(circles[1]), run_time=.3)
+        for i in range(0, 9):
+            self.play(FadeIn(circles[1][i % 2]), run_time=.15)
+            self.wait(.3)
+            self.play(FadeOut(circles[1][i % 2]), run_time=.15)
+
+        self.play(FadeOut(circles[0]), run_time=.3)
+        for i in range(0, 9):
+            self.play(FadeIn(circles[0][i % 1]), run_time=.15)
+            self.wait(.3)
+            self.play(FadeOut(circles[0][i % 1]), run_time=.15)
+
+        flash_triangle()
+
+        for i in range(0, 21):
+            self.play(FadeIn(circles[2][i % 3]), FadeIn(circles[0][i % 1]), run_time=.15)
+            self.wait(.3)
+            self.play(FadeOut(circles[2][i % 3]), FadeOut(circles[0][i % 1]), run_time=.15)
+
+        flash_triangle()
+
+        for i in range(0, 16):
+            self.play(FadeIn(circles[3][i % 4]), FadeIn(circles[1][i % 2]), run_time=.15)
+            self.wait(.3)
+            self.play(FadeOut(circles[3][i % 4]), FadeOut(circles[1][i % 2]), run_time=.15)
+
+        self.wait(.4)
+        for i in range(0, 4):
+            self.play(FadeIn(circles[i]))
 
         self.play(Wiggle(tetraktys))
         self.wait(1)
         self.play(FadeOut(*self.mobjects), run_time=1)
+
+        title = Tex(r"\textsc{Tetraktys}").scale(4).set_color(GREEN)
+        self.play(FadeIn(title), run_time=5)
