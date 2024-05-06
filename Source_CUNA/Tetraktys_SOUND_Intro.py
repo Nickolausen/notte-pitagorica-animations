@@ -1,7 +1,7 @@
 from manim import *
 from random import randint
 
-WAITING_INTERVAL = .2
+WAITING_INTERVAL = .1
 
 class Tetraktys_Sound(Scene):
     def construct(self):
@@ -45,47 +45,50 @@ class Tetraktys_Sound(Scene):
             self.play(FadeOut(circles[0][0]),  run_time=.1)
             self.wait(WAITING_INTERVAL)
 
+        div1 = 2
         for i in range(0, 8):
             self.play(FadeIn(circles[0][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL / div1)
             self.play(FadeIn(circles[1][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL / div1)
             self.play(FadeOut(circles[0][0]),  run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL / div1)
             self.play(FadeOut(circles[1][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL / div1)
 
+        div2 = 1.8
         for i in range(0, 8):
             self.play(FadeIn(circles[0][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL / div2)
             self.play(FadeIn(circles[1][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL / div2)
             self.play(FadeIn(circles[1][1]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL / div2)
             self.play(FadeOut(circles[0][0]),  run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL / div2)
             self.play(FadeOut(circles[1][0]),  run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL / div2)
             self.play(FadeOut(circles[1][1]),  run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL / div2)
 
+        div3 = 9
         for i in range(0, 8):
             self.play(FadeIn(circles[0][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL * div3)
             self.play(FadeIn(circles[1][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL * div3)
             self.play(FadeIn(circles[1][1]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL * div3)
             self.play(FadeIn(circles[2][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL * div3)
             self.play(FadeOut(circles[0][0]),  run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL * div3)
             self.play(FadeOut(circles[1][0]),  run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL * div3)
             self.play(FadeOut(circles[1][1]),  run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL * div3)
             self.play(FadeOut(circles[2][0]), run_time=.1)
-            self.wait(WAITING_INTERVAL)
+            self.wait(WAITING_INTERVAL * div3)
 
         for i in range(0, 8):
             self.play(FadeIn(circles[0][0]), run_time=.1)

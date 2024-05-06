@@ -5,12 +5,16 @@ class Versione1(Scene):
         # screen_width = int((14 + 2/9) / 2) 
         # screen_height = int(8/2)
         
+        logo_pascal = ImageMobject("logo_bp.png")
+        logo_pascal.set_color(WHITE)
+
         # Creazione titolo
-        first_word = Tex(r"$\mathbb{N}$\textsc{otte}").scale(3)
-        second_word = Tex(r"$\mathbb{P}$\textsc{itagorica}").scale(3)
+        first_word = Tex(r"$\mathbb{N}$\textsc{otte}").scale(2.5)
+        second_word = Tex(r"$\mathbb{P}$\textsc{itagorica}").scale(2.5)
         second_word.next_to(first_word, DOWN, buff=.2)
         sentence = VGroup(first_word, second_word)
         sentence.move_to(ORIGIN)
+        logo_pascal.scale(.2).next_to(sentence, UP, .25)
 
         # Creazione oggetti - Serie di Fibonacci e Golden Ratio
         squares = VGroup(Square(1 * 0.3))
@@ -22,7 +26,7 @@ class Versione1(Scene):
             squares.add(Square(i * 0.3).next_to(squares, d, buff=0))
 
         squares.center()
-        squares.set_stroke(color=GRAY, width=.5)
+        squares.set_stroke(color=GRAY, width=2)
 
         direction = [1, -1, -1, 1]
         corner = [[UL, -UL], [UR, -UR]]
@@ -53,8 +57,10 @@ class Versione1(Scene):
         self.wait()
 
         self.play(Write(sentence))
+        self.play(FadeIn(logo_pascal))
         self.wait(5)
         self.play(Unwrite(sentence))
+        self.play(FadeOut(logo_pascal))
 
         self.play(FadeOut(squares), Uncreate(spiral[::-1]), run_time=1.5)
         

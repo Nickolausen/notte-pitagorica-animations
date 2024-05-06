@@ -22,6 +22,7 @@ class Intro(Scene):
 
         self.play(FadeIn(pres_title), run_time=5)
         self.play(AddTextLetterByLetter(subtitle))
+        self.play(ApplyWave(pres_title), run_time=3)
 
         for circle in circles:
             self.play(FadeIn(circle), run_time=randint(3, 5))
