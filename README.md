@@ -3,9 +3,9 @@ Animazioni realizzate con ManimCE in occasione della **Notte Pitagorica** - even
 
 ## Come ottenere le animazioni - compilare i file
 1) Installa tutte le dependencies necessarie 
-- https://docs.manim.community/en/stable/installation/windows per Windows
-- https://docs.manim.community/en/stable/installation/macos per MacOS
-- https://docs.manim.community/en/stable/installation/linux per Linux
+- https://docs.manim.community/en/stable/installation/windows.html per Windows
+- https://docs.manim.community/en/stable/installation/macos.html per MacOS
+- https://docs.manim.community/en/stable/installation/linux.html per Linux
 
 2) Esegui nel terminale il seguente comando:
 ```
