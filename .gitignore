@@ -6,3 +6,6 @@ __pycache__/
 
 # MacOS files
 .DS_Store
+
+# Python Virtual Enviroment
+.venv

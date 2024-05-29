@@ -7,10 +7,21 @@ Animazioni realizzate con ManimCE in occasione della **Notte Pitagorica** - even
 - https://docs.manim.community/en/stable/installation/macos.html per MacOS
 - https://docs.manim.community/en/stable/installation/linux.html per Linux
 
+2) Prepara il virtual enviroment e installa le dipendenze
+```sh
+source ./setup.sh
+```
+
 2) Esegui nel terminale il seguente comando:
+```sh
+./run.sh <nomefile.py>
 ```
-manim -pq<l/m/h> <nome_file>.py
+
+## Flag opzionali
+```sh
+./run.sh -<l/m/h> <nomefile.py>
 ```
+- `l/m/h` (default: `m`): livello di qualità (low/medium/high)
 
 
 ---
