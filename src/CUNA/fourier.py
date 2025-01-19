@@ -31,9 +31,7 @@ from func.triangle import *
 def periodic(offset, period):
     return lambda f: lambda x: f(((x - offset) % period) + offset)
 
-
 func_period = func_period_to - func_period_from
-
 
 @periodic(func_period_from, func_period)
 def func_periodic(x):
